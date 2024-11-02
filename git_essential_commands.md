@@ -1,30 +1,76 @@
-# Command list
-
+# Các lệnh thiết yếu để sử dụng Git
+## Khởi tạo user
+- Đầu tiên nếu muốn khởi tạo thông tin người dùng có thể dùng 2 câu lệnh dưới đây để cho git biết bạn là ai, user.name và user.email nên để giống với trong Github, ở đây mình lấy ví dụ theo name và email Github của mình luôn. 
 ```
-git config --global user.name "hoang-emperor"
+git config --global user.name "4utumnRain"
 git config --global user.email "hoangdepzai0001@gmail.com"
 ```
-Dùng để cho Git biết bạn là ai, dùng tương ứng tên bạn và mail trên GitHub.
-
-
+**Note**:  `--global` là để khai báo người dùng trong mọi nơi, nếu chỉ muốn 
+trong mỗi repo đó thì bỏ `--global` đi.
+## Khởi tạo git
+---
+- `git init` dùng để khởi tạo git trong tại vị trí folder được gõ lệnh đó  đó.
 ```
 git init
 ```
-Dùng để khởi tạo Git trong thư mục đó
-### Git add
-```
-git add [file_name] //dùng để stage 1 file nhất định
-
-hoặc
-
-git add --all //dùng để stage all file trong folder đó
-git add -A 
-```
-
+## Xem trạng thái git
+---
 ```
 git status
 ```
-Dùng để check trạng thái các file trong folder
+**Example**: Sau khi mình khởi tạo một git trong thư mục của mình, gõ lệnh `git status` được: 
+``` 
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_essential_commands.md
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+```
+Nhìn vào ta có thể hiểu được, git nó sẽ gồm các công đoạn đó là sử dụng lệnh `git add` một file gì đó để theo dõi sự thay đổi của nó (thêm nó vào trạng thái stage), sau đó dùng lệnh `git commit` để lưu lại thay đổi của file đó, sẵn sàng cho việc upload code lên github chẳng hạn.
+
+---
+## Thêm biến vào trạng thái stage
+- `git add` dùng để adđ một file vào trạng thái stage, sau đó các file đó sẽ được theo dõi.
+```
+git add [file_name] //dùng để stage 1 file nhất định
+
+git add --all //dùng để stage all file trong folder đó
+or
+git add -A 
+or
+git add .
+```
+**Example**: Mình tạo một file C tên `example_hello.c` có nội dung ví dụ như sau:
+```
+#include <stdio.h>
+
+int main() {
+    printf("Hello World");
+    return 0;
+}
+```
+Sau đó dùng lệnh `git add example_hello.c` để đưa file vào trạng thái stage.
+Sau đó dùng lệnh `git status` để check:
+```
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   example_hello.c
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_essential_commands.md
+```
+Có thể thấy được file `example_hello.c` đã được stage (được theo dõi những thay đổi của file). Ở đây mình có thể thấy được file hướng dẫn git của mình chưa được stage, mình sẽ dùng lệnh `git add -A` để add tất cả vào trạng thái stage.
 ```
 git commit -m "Bla bla"
 ```
