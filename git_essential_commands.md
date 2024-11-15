@@ -327,13 +327,6 @@ To https://github.com/4utumnRain/documents
 branch 'master' set up to track 'main/master'.
 ```
 check lại github thì thấy các file của mình đã được up lên github.
-<!-- 
-```
-git remote show <name>
-```
-Hiện 1 list nhánh liên quan đến remote `name` đó và các điểm cuối để fetch and push -->
-
-Setpoint ở đây
 
 
 
@@ -363,7 +356,9 @@ git pull main/master
 
 ## Git push to github 
 Dùng để write to the remote repo
-
+```
+git push <origin> <name-branch> % đẩy nhánh lên remote repo
+```
 
 
 ## Git clone
