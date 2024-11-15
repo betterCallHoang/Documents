@@ -368,32 +368,3 @@ git pull  %để kéo hết các nhánh
 ```
 git push <remote-name> <branch-name>
 ```
-
-Command trên dùng để update trạng thái hiện tại của `branch-name` lên remote repo `remote-name`
-
-### Git fetch
-```
-git fetch <remote>
-```
-
-Lấy tất cả các nhánh từ repo `remote`
-
-```
-git fetch <remote> <branch>
-```
-Chỉ lấy từ `branch`
-
-```
-git fetch --all
-```
-Lấy tất cả từ các registered remotes 
-
-```
-git fetch --dry-run
-```
-Thực hiện thử chạy lệnh fetch, nó sẽ hiển thị tất cả các hành động trong quá trình fetch nhưng không áp dụng chúng.
-
-```
-git fetch origin
-```
-hiển thị tất cả các nhánh đã được download
