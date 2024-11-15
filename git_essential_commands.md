@@ -359,6 +359,7 @@ lệnh trên sẽ trộn tất cả những update trên nhánh main/master trê
 Lệnh kết hợp của fetch và merge.
 ```
 git pull main/master
+```
 
 ## Git push to github 
 Dùng để write to the remote repo
