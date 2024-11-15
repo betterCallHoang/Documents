@@ -1,3 +1,2 @@
-# Refs
-https://education.github.com/git-cheat-sheet-education.pdf <br>
-https://www.atlassian.com/git/tutorials/syncing/
+This repository contains my notes about knowledges during my studying process.
+Each .md file is a note, click it to read.
