@@ -174,6 +174,8 @@ git branch <name_branch> //Tạo 1 nhánh mới
 git branch //liệt kê các nhánh, nhánh có prefix * là đang xét
 
 git branch -r // xem nhánh các nhánh từ các remote repo
+
+git branch -a // liệt kê tất cả nhánh local và remote
 ```
 For example, giờ mình muốn tạo thêm một hàm chức năng vào file `example.c` của mình, giả sử, tính năng cộng 2 số a và b cho trước, giờ ta sẽ tạo một nhánh mới có tên là `add-sum`, sau đó dùng lệnh `git branch` để kiểm tra sự tồn tại của các nhánh.
 ```
@@ -338,6 +340,10 @@ git fetch <github-branch>
 for example, 
 ```
 git fetch main/master
+
+or 
+
+git fetch   #để kéo hết các nhánh về
 ```
 lệnh trên kéo những update từ nhánh main/master của mình trên github về.
 
@@ -352,19 +358,13 @@ lệnh trên sẽ trộn tất cả những update trên nhánh main/master trê
 Lệnh kết hợp của fetch và merge.
 ```
 git pull main/master
+
+or 
+
+git pull  %để kéo hết các nhánh 
 ```
 
 ## Git push to github 
-Dùng để write to the remote repo
-```
-git push <origin> <name-branch> % đẩy nhánh lên remote repo
-```
-
-
-## Git clone
-Git clone sẽ tạo 1 kết nối remote ở repo mà bạn clone về.
-
-
 ```
 git push <remote-name> <branch-name>
 ```
