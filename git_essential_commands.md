@@ -174,6 +174,8 @@ git branch <name_branch> //Tạo 1 nhánh mới
 git branch //liệt kê các nhánh, nhánh có prefix * là đang xét
 
 git branch -r // xem nhánh các nhánh từ các remote repo
+
+git branch -a // liệt kê tất cả nhánh local và remote
 ```
 For example, giờ mình muốn tạo thêm một hàm chức năng vào file `example.c` của mình, giả sử, tính năng cộng 2 số a và b cho trước, giờ ta sẽ tạo một nhánh mới có tên là `add-sum`, sau đó dùng lệnh `git branch` để kiểm tra sự tồn tại của các nhánh.
 ```
@@ -345,6 +347,10 @@ git fetch <github-branch>
 for example, 
 ```
 git fetch main/master
+
+or 
+
+git fetch   #để kéo hết các nhánh về
 ```
 lệnh trên kéo những update từ nhánh main/master của mình trên github về.
 
@@ -359,12 +365,37 @@ lệnh trên sẽ trộn tất cả những update trên nhánh main/master trê
 Lệnh kết hợp của fetch và merge.
 ```
 git pull main/master
+
+or 
+
+git pull  %để kéo hết các nhánh 
 ```
 
 ## Git push to github 
-Dùng để write to the remote repo
+Sau khi commit những thay đổi trong file trong repo của bạn, ta thử kiểm tra những update bằng lệnh `status`:
+```
+$ git status
+On branch master
+Your branch is ahead of 'main/master' by 1 commit.
+  (use "git push" to publish your local commits)
 
+nothing to commit, working tree clean
 
+```
+ta thấy ta đang trước nhánh trên github 1 commit, để đẩy lên tiến hành thực hiện lệnh `push`:
+```
+$ git push main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 5.12 KiB | 2.56 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/4utumnRain/documents
+   7ca6ee3..38594d6  master -> master
+```
+có thể lên github để kiểm tra những thay đổi.
 
 ## Git clone
 Git clone sẽ tạo 1 kết nối remote ở repo mà bạn clone về.
